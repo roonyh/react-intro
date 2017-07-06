@@ -1,6 +1,10 @@
 import React from 'react';
 
-class ProductRow extends React.Component {
+class SearchBar extends React.Component {
+
+  constructor() {
+    super();
+  }
 
   render() {
     const searchStyles = {
@@ -15,13 +19,14 @@ class ProductRow extends React.Component {
 
     return (
       <div style={searchStyles}>
-        <input type="text" style={textStyles}/>
-        <input id='in-stock-check' type="checkbox" />
-        <label htmlFor='in-stock-check'>{'Only show products in stock'}</label>
+        <input type="text" style={textStyles} value="ssss"/>
+        <input id='in-stock-check' type="checkbox" checked={this.props.checked}
+           onChange={this.props.onCheck}/>
+        <label htmlFor='in-stock-check'>{'Only show products in stock..'}</label>
       </div>
     );
   }
 
 }
 
-export default ProductRow;
+export default SearchBar;

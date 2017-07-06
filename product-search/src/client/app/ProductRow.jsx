@@ -2,10 +2,13 @@ import React from 'react';
 
 class ProductRow extends React.Component {
 
+
   render() {
+    const {name, price, outOfStock} = this.props;
+    
     const nameStyles = {
       width: '80',
-      color: this.props.outOfStock ? 'red' : 'black',
+      color: outOfStock ? 'red' : 'black',
     }
 
     const priceStyles = {
@@ -14,8 +17,8 @@ class ProductRow extends React.Component {
 
     return (
       <tr>
-        <td style={nameStyles}>{this.props.name}</td>
-        <td style={priceStyles}>{'$' + this.props.price}</td>
+        <td style={nameStyles}>{name}</td>
+        <td style={priceStyles}>{'$' + price}</td>
       </tr>
     );
   }
